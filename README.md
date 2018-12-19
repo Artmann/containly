@@ -1,4 +1,4 @@
-# Containly
+# Containly [![Build Status](https://travis-ci.org/Artmann/containly.svg?branch=master)](https://travis-ci.org/Artmann/containly)
 
 An easy to use IOC Container for TypeScript.
 

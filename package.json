@@ -7,7 +7,7 @@
   "private": false,
   "repository": "https://www.github.com/artmann/containly",
   "types": "dist/index.d.ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "build": "tsc",
     "test": "mocha -r ts-node/register src/**/*.spec.ts"

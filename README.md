@@ -43,11 +43,11 @@ import Logger from './log';
 Container.bind(Logger);
 ```
 
-Inject an instance of your class.
+Inject an instance of your class by using the `Inject(ClassName)` decorator.
 
 ```ts
 export default class MyController {
-  @Inject()
+  @Inject(Logger)
   private logger: Logger;
 
   show() {
@@ -58,7 +58,7 @@ export default class MyController {
 
 ### Singletons
 
-Per default, the container will give you a new instance of the class every time you request it. If you want a Singleton instead, you can use the `singleton` method.
+Per default, the container will give you a new instance of the class every time you request it. If you want a Singleton instead, you can use the `singleton` method instead.
 
 ```ts
 class Counter {
@@ -79,7 +79,7 @@ Container.get<Counter>(Counter).count(); // => 3
 
 ### Testing
 
-Using dependecy injection makes mocking in tests super easy.
+Using dependecy injection makes unit testing your code that much easier.
 
 ```ts
 class UserRepository {
@@ -95,7 +95,7 @@ class MockUserRepository {
 }
 
 class UserController {
-  @Inject()
+  @Inject(UserRepository)
   private userRepository: UserRepository;
 
   show(id: number) {
